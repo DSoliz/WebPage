@@ -1,0 +1,23 @@
+body{
+	background-color: rgb(56, 68, 98);
+	background-image: url(background.jpg);
+	background-size: 100%;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+}
+p{
+	background-color: rgb(171, 172, 118);
+	color: white;
+	font-family: monospace;
+	font-size: 20pt;
+}
+
+p:hover{
+    background-color: white;
+    color: rgb(171, 172, 118);
+}
+
+a{
+	color: white;
+	font-size: 16pt;
+}

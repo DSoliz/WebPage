@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+        <link rel=stylesheet type=text/css href=style.css>
+</head>
+
+<script type="text/javascript" src="formChecker.js" ></script>
+
+<script>
+
+var itemArr = [];
+var inCart = [];
+var sum = 0;
+var total = 0;
+function itemCreate(name,price){
+	this.name = name;
+	this.price = price;
+}
+var item1 = new itemCreate("Gamboy Color",119.99);
+var item2 = new itemCreate("Pokemon Red",19.99);
+var item3 = new itemCreate("Carrying Case",39.99);
+var itemArr = [item1,item2,item3];
+
+function addToCart(itemIndex){
+	inCart.push(itemArr[itemIndex]);
+	sumPrice(itemArr[itemIndex].price);
+}
+function sumPrice(inPrice){
+	sum = sum + inPrice;
+	document.getElementById("p1").innerHTML = sum;
+	document.getElementById("p1").value = sum;
+}
+function shipping(shipPrice){
+	total = sum + shipPrice;
+	document.getElementById("p1").innerHTML = total;
+	document.getElementById("p1").value = total;
+}
+function reset(){
+	sum = 0;
+	total = 0;
+	inCart = [];
+	document.getElementById("p1").innerHTML = sum;
+	document.getElementById("p1").value = sum;
+	alert(document.getElementById("myuser").value == "");
+}
+
+</script>
+
+<body>
+
+	<h1>Web Store!</h1>
+
+	<script>
+		alert(document.getElementById("p1").name);
+	</script>
+
+	<table style="width:100%">
+	  <tr>
+	    <td>
+			<div class="polaroid">
+				<img src="GBC.jpg" alt="gameboy" style="max-width:350px; max-height:350px ; justify-content: center">
+				<div class="container">
+					<p>
+						<button onclick="addToCart(0)">Add to Cart</button>
+					</p>
+				</div>
+			</div>
+		</td>
+	    <td>
+			<div class="polaroid">
+			<img src="Red.jpg" alt="red" style="max-width:350px; max-height:350px">
+			<div class="container">
+				<p>
+					<button onclick="addToCart(1)">Add to Cart</button>
+				</p>
+			</div>
+		</div>
+	</td>
+	    <td>
+			<div class="polaroid">
+				<img src="Case.jpg" alt="case" style="max-width:350px; max-height:350px; justify-content: center">
+				<div class="container">
+					<p>
+						<button onclick="addToCart(2)">Add to Cart</button>
+					</p>
+				</div>
+			</div>
+		</td>
+	  </tr>
+	</table>
+	Shipping Method
+	<form action="customerBackend.php" onsubmit="return check()">
+	  <input type="radio" name="a" value="0" onclick="shipping(0)" > <label >Free 7 day</label><br/>
+	  <input type="radio" name="a" value="50" onclick="shipping(50)" > <label >$50.00 over night"</label><br/>
+	  <input type="radio" name="a" value="5" onclick="shipping(5)" > <label >$5.00 three day</label><br/>
+	  <p>Total Cost</p>
+
+	  <object id="p1" name="price" value='0'> 0 </object><br>
+
+	  E-mail:<br>
+	  <input id="myuser" type="text" name="user" value="">
+	  <br>
+	  Password:<br>
+	  <input id="mypass" type="password" name="pass" value="">
+	  <br><br>
+
+	  <input type="submit" value="Submit">
+	</form>
+
+	<button onclick="reset()">Reset Cart</button>
+
+</body>
+</html>

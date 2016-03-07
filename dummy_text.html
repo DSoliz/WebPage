@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<style>
+		#mystyle{
+			background-color: rgb(171, 172, 118);
+			color: white;
+			font-family: monospace;
+			font-size: 20pt;
+			border-style: solid;
+			border-width: 10px;
+			border-color: black;
+		}
+		body{
+			background-color: rgb(147, 157, 184);
+		}
+	</style>
+</head>
+<body>
+	<script type="text/javascript">
+		function change(){
+			var bC1 = document.getElementById('border_c').value;
+			var bC2 = document.getElementById('backgr_c').value;
+			var x = document.getElementById("mystyle");
+			var num = parseInt(bC1);
+			if(bC1 == "red" || "green" || "blue"){
+				x.style.borderColor = bC1;
+			}
+			if (! isNaN(num)) {
+				x.style.borderWidth = bC1 + "px";
+			}
+
+			if(bC2 == "red" || "green" || "blue"){
+				x.style.backgroundColor = bC2;
+			}
+		}
+	</script>
+	<p id="mystyle">
+		Lorem ipsum dolor sit amet, at vulputate sententiae disputando nec, qui
+		ut homero delenit probatus. Est invenire iudicabit explicari ne. Ei eros
+		hendrerit ius, ne sea agam congue commune. Ut sit nostro animal mentitum,
+		ea lobortis incorrupte eos. Ad oratio offendit vel, suas discere sea te,
+		nisl idque eirmod ad ius. Oporteat facilisi similique no vix, in ludus
+		copiosae assueverit sed. Qui laoreet noluisse dissentias eu.
+	</p>
+
+	<form onsubmit="return change()" method="post">
+		Border Color:<br>
+		<input id="border_c" type="text" name="Border Color" placeholder="">
+		<br>
+		Background Color:<br>
+		<input id="backgr_c" type="text" name="Background Color" placeholder="">
+		<br>
+		<input type="button" value="Change" onclick="change()">
+	</form>
+</body>
+</html>

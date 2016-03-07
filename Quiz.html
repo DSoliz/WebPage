@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+	<script>
+		function qGen(myQuestion,a,b,c,answer,num){
+	        document.write('<p class="question"> Question ' + num + ': ' + myQuestion + '</p>');
+			document.write('<input type="radio" name="q'+ num +'" value="a" id="q'+ num +'a"><label for="q'+ num +'a">'+ a +'</label><br/>');
+			document.write('<input type="radio" name="q'+ num +'" value="b" id="q'+ num +'b"><label for="q'+ num +'b">'+ b +'</label><br/>');
+			document.write('<input type="radio" name="q'+ num +'" value="c" id="q'+ num +'c"><label for="q'+ num +'c">'+ c +'</label><br/>');
+		}
+
+	</script>
+	<form action="Quiz.php">
+		1. Where was the legendary Woodstock festival first held? <br>
+		<input type="radio" name="q1" value="a" id="q1a"><label >California State</label><br/>
+		<input type="radio" name="q1" value="b" id="q1b"><label >New York State</label><br/>
+		<input type="radio" name="q1" value="c" id="q1c"><label >London, England</label><br/>
+		<br>
+
+		2. Jimi hendrix was a: <br>
+		<input type="radio" name="q2" value="a" id="q2a"><label >Pianist</label><br/>
+		<input type="radio" name="q2" value="b" id="q2b"><label >Bassist</label><br/>
+		<input type="radio" name="q2" value="c" id="q2c"><label >Guitarist</label><br/>
+		<br>
+
+		3. Bass guitars commonly have how many strings? <br>
+		<input type="radio" name="q3" value="a" id="q3a"><label >4</label><br/>
+		<input type="radio" name="q3" value="b" id="q3b"><label >5</label><br/>
+		<input type="radio" name="q3" value="c" id="q3c"><label >6</label><br/>
+		<br>
+
+		4. The Beatles were a band from: <br>
+		<input type="radio" name="q4" value="a" id="q4a"><label >United States</label><br/>
+		<input type="radio" name="q4" value="b" id="q4b"><label >England</label><br/>
+		<input type="radio" name="q4" value="c" id="q4c"><label >Italy</label><br/>
+		<br>
+
+		5. Rock is music is derived from what music genre? <br>
+		<input type="radio" name="q5" value="a" id="q5a"><label >Classical</label><br/>
+		<input type="radio" name="q5" value="b" id="q5b"><label >Blues</label><br/>
+		<input type="radio" name="q5" value="c" id="q5c"><label >Metal</label><br/>
+		<br>
+<!--
+		<script>
+			qGen("Where was the legendary Woodstock festival first held?","California State","New York State","London, England",'b',1);
+			qGen("Jimi hendrix was a:","Pianist","Bassist","Guitarist",'c',2);
+			qGen("Bass guitars commonly have how many strings?","4","5","6",'a',3);
+			qGen("The Beatles were a band from:","United States","England","Italy",'b',4);
+			qGen("Rock is music is derived from what music genre?","Classical","Blues","Metal",'b',5);
+		</script>
+-->
+		<input type="submit" value="submit" name="submit">
+	</form>
+</body>
+</html>

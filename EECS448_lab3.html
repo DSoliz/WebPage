@@ -1,0 +1,82 @@
+<html>
+	<head>
+	<title>Diego's Page</title>
+	</head>
+	<body>
+		<p>Diego Soliz EECS 448 lab-3</p>
+		<script>
+			function validateForm(){
+				var p1 = document.getElementById('pass1').value;
+				var p2 = document.getElementById('pass2').value;
+				if(p1.length < 8){
+					alert("Password must be at least 8 characters long!")
+				}else{
+					if (p1 == p2){
+						alert("Succes!!");
+					}else {
+						alert("They Don't Match")
+					}
+				}
+			}
+			var image_lib = ["Book_Soul.jpg", "Dark_Side.jpg", "Jimi_Fire.jpg","Pulsars.jpg","Plastic_Beach.jpg"];
+			var i = 0;
+			function browse_previous(){
+				i--;
+				if(i == -1){
+					i = 4;
+				}
+				display();
+			}
+			function browse_next(){
+				i++;
+				if(i == 5){
+					i = 0;
+				}
+				display();
+			}
+			function display(){
+				document.getElementById("gallery").src = image_lib[i];
+			}
+		</script>
+
+		<form action="index.html" onsubmit="return validateForm()" method="post">
+			Password: <input id="pass1" type="password" name="Password" placeholder=""><br>
+			Verify: <input id="pass2" type="password" name="Verify" placeholder=""><br>
+			<input type="submit" value="Submit">
+		</form>
+
+		<style>
+			body {margin:25px;}
+
+			div.polaroid {
+				max-width: 400px;
+				max_height: 400px;
+				width: 500px;
+				height: 450px;
+				background-color: grey;
+				margin-bottom: 25px;
+			}
+			div.container {
+				text-align: center;
+			}
+		</style>
+
+		<div class="polaroid">
+			<img id="gallery" src="Book_Soul.jpg" alt="Image" style="width:400px; height:400px">
+			<div class="container">
+				<form>
+					<p><input type="button" value = "Previous" onclick="browse_previous()">
+						<span>
+							<input type="button" value = "Next" onclick="browse_next()">
+						</span>
+					</p>
+				</form>
+			</div>
+		</div>
+
+		<a href="dummy_text.html">Dummy Text Format Test</a>
+		<br>
+		<a href="fictional_profile.html">Fictional Profile</a>
+
+	</body>
+</html>
