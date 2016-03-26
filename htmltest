@@ -1,0 +1,13 @@
+<html>
+  <head>
+    <title></title>
+    <meta content="">
+    <style></style>
+  </head>
+  <body>
+    <p>rand</p>
+	<?php
+		echo "lol";
+	?>
+  </body>
+</html>

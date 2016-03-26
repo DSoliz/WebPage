@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<body>
+<script>
+function check(){
+	if(document.getElementById("usrnm").value == ""){
+		alert("No username");
+		event.preventDefault();
+		return false;
+	}
+	return true;
+}
+</script>
+
+<form action="CreateUser.php" onsubmit="return check()" method="POST">
+New Username: <input type="text" name="UserName" id="usrnm" value=""><br>
+<input type="submit" value="Submit">
+</form>
+
+<p>Click the "Submit" button to create new user </p>
+
+</body>
+</html>

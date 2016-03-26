@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<body>
+<script>
+function check(){
+	if(document.getElementById("usrnm").value == ""){
+		alert("No Username.");
+		event.preventDefault();
+		return false;
+	}else{
+		if(document.getElementById("postnm").value == "" || document.getElementById("post_id").value == "" ){
+			alert("Empty Posts or no post name.");
+			event.preventDefault();
+			return false;
+		}
+	}
+	return true;
+}
+</script>
+
+<form action="CreatePosts.php" id="myform" onsubmit="return check()" method="POST">
+Poster Username: <input type="text" name="UserName" id="usrnm" value=""><br>
+Post Name: <input type="text" name="post_id" id="post_name" value=""><br>
+New Post:
+<textarea name="new_post" id="postnm" form="myform" style="width:96%;height:90px;border:none;padding:2%;font:22px/30px sans-serif;">
+</textarea>
+
+<input type="submit" value="Submit">
+</form>
+
+<p>Click the "Submit" button to create new user </p>
+
+</body>
+</html>
